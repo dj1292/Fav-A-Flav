@@ -1,0 +1,11 @@
+<h1> Current list of Users</h1>
+
+<ul>
+    <% @users.each do |user| %>
+    <h2>Username: <%= link_to user.username, user_path(user) %></h2>
+    <h3>Location: <li><%= user.location %></li></h3>
+    <h3>Favorite Food: <li><%= user.favorite_food %></li></h3>
+    <%= link_to "Edit", edit_user_path(user) %>
+    <%= button_to "Delete", user, :method => :delete, data: {confirm: "Are you sure?"} %>
+    <% end %>
+</ul>

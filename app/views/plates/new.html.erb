@@ -1,0 +1,9 @@
+<%= form_for @plate, method: :post do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %> <br>
+<%= f.label :category %>
+<%= f.text_field :category %> <br>
+<%= f.label :username %>
+<%= f.collection_select(:user_id, User.all, :id, :username) %>
+<%= f.submit %>
+<% end %>
