@@ -12,4 +12,14 @@
     <h2>Favorite Food:</h2> <b><%= @user.favorite_food %></b>
 </p>
 
-<%= link_to "Back to Users", users_path %>
+<p>
+    <b>Your plates:</b> 
+    <ul>
+    <% @user.plates.map do |plate|%>
+    <li><%= link_to plate.name, plate_path(plate) %></li>
+    </ul>
+    <% end %>
+</p>
+
+<%# <%= link_to "View users page", users_path %> 
+<%= link_to "Create a Plate", new_plate_path %>

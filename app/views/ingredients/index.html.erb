@@ -1,4 +1,6 @@
 <h1>Current list of Ingredients</h1>
+
+<b><%=link_to "Create", new_ingredient_path%></b>
 <ul>
 <% @ingredients.each do |ingredient| %>
 <h2>Name: </h2><%= link_to ingredient.name, ingredient_path(ingredient) %>

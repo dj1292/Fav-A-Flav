@@ -1,3 +1,18 @@
 <h1> <%= @food.name %> </h1>
 
-<%= link_to "Back to all foods", foods_path %>
+<p>
+    <h2>Consists of:</h2>
+    <b><%=  %></b>
+</p>
+
+<p>
+    <h2>Made for:</h2>
+    <b><%= link_to @food.plate.name, plate_path %></b>
+</p>
+
+
+<b><%= link_to "Edit", edit_food_path(@food) %></b><br><br>
+<b><%= link_to "Add Ingredients for your food", new_ingredient_path %></b><br>
+<b><%= link_to "Back to Plate", plate_path %> <br></b>
+<b><%= link_to "Back to Home", user_path(@user) %></b>
+

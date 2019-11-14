@@ -1,6 +1,10 @@
 <h1><%= @review.title %> </h1>
 <p>
-<b>Content:</b> <%= @review.content %>
+<b>Content:</b> <b><%= @review.content %></b>
+</p>
+<p>
+<h2>Creator:</h2> <b><%=link_to @review.user.username, user_path(@user) %></b>
 </p>
 
-<%= link_to "Back to Reviews", reviews_path %>
+<%= link_to "Back to Reviews", reviews_path %><br>
+<%= link_to "To Home Page", user_path(@user) %>

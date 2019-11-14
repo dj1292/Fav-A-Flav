@@ -1,4 +1,6 @@
 <h1>Current list of Foods</h1>
+
+<b><%= link_to "Create" , new_food_path %></b>
 <ul>
 <% @foods.each do |food| %>
 <h2>Name:</h2> <b><%= link_to food.name, food_path(food) %></b> <br><br>
@@ -6,3 +8,5 @@
 <%= button_to "Delete", food, :method => :delete, data: {confirm: "Are you sure?"} %>
 <% end %>
 </ul>
+
+<%= link_to "Back to Plates", plates_path %>

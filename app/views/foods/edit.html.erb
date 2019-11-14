@@ -1,5 +1,6 @@
 <%= form_for @food, method: :patch do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %> <br>
+<%= f.collection_select(:plate_id, Plate.all, :id, :name) %><br>
 <%= f.submit %>
 <% end %>

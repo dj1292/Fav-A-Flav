@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-
+    before_action :authorized
     before_action :find_review, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
     end
 
     def update
-        @review.update
+        @review.update(review_params)
         redirect_to review_path
     end
 
@@ -38,6 +38,6 @@ class ReviewsController < ApplicationController
     end
 
     def review_params 
-    strong_params = params.require(:review).permit(:title, :content, :user_id)
+    strong_params = params.require(:review).permit(:title, :content, :user_id, :plate_id)
     end
 end

@@ -1,7 +1,24 @@
 <h1> <%= @plate.name %> </h1>
 
 <p>
-    <b>Category:</b> <%= @plate.category %>
+    <h2>Food on Plate:</h2>
+    <% @plate.foods.map do |food|%>
+    <b><%= link_to food.name, food_path %></b>
+    <% end %>
 </p>
 
-<%= link_to "Back to Plates", plates_path %>
+<p>
+    <h2>Category:</h2> <b><%= @plate.category %></b>
+</p>
+
+<p>
+    <h2>Created By:</h2>
+    <%= @plate.user.username %>
+</p>
+
+
+<%= link_to "Edit", edit_plate_path(@plate) %> <br><br>
+<%= link_to "Add Food to this Plate", new_food_path %> <br>
+<%= link_to "Write a Review", new_review_path %><br><br>
+<%= link_to "View Plate Page", plates_path %><br>
+<%= link_to "Back to User Page", user_path %>

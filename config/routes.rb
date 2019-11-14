@@ -3,9 +3,12 @@ Rails.application.routes.draw do
 
   resources :users, :plates, :foods, :reviews, :restaurants, :ingredients
 
-  get "/login", to: "session#new"
+  get "/login", to: "sessions#new"
+  post"/login", to: "sessions#create"
+  get "/logout", to: "sessions#destroy"
 
-  get "/login", to: "session#create"
 
-  get "/logout", to: "session#destroy"
+
+
+
 end

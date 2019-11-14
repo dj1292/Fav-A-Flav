@@ -1,6 +1,6 @@
 class FoodsController < ApplicationController
-
-before_action :find_food, only: [:show, :edit, :update, :destroy]
+    before_action :authorized
+    before_action :find_food, only: [:show, :edit, :update, :destroy]
 
     def index
         @foods = Food.all
@@ -38,6 +38,6 @@ before_action :find_food, only: [:show, :edit, :update, :destroy]
     end
 
     def food_params
-        strong_params = params.require(:food).permit(:name)
+        strong_params = params.require(:food).permit(:name, :plate_id)
     end
 end

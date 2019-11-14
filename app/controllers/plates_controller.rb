@@ -1,6 +1,6 @@
 class PlatesController < ApplicationController
     before_action :find_plate, only: [:show, :edit, :update, :destroy]
-
+    before_action :authorized
 def index
     @plates = Plate.all
 end

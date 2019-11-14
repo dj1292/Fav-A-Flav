@@ -3,5 +3,7 @@
 <%= f.text_field :name %> <br>
 <%= f.label :category %>
 <%= f.text_field :category %> <br>
+<b><%= f.label :username %></b>
+<%= f.collection_select(:user_id, User.all, :id, :username) %> <br>
 <%= f.submit %>
 <% end %>

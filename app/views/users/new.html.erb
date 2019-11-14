@@ -1,11 +1,15 @@
+<h1>Create a new user!</h1>
+
 <%= form_for @user, method: :post do |f| %>
 <%= f.label :name %>
-<%= f.text_field :name %> <br>
+<%= f.text_field :name %> <br><br>
 <%= f.label :username %>
-<%= f.text_field :username %> <br>
+<%= f.text_field :username %> <br><br>
+<%= f.label :password %>
+<%= f.text_field :password %> <br><br>
 <%= f.label :location %>
-<%= f.text_field :location %> <br>
+<%= f.text_field :location %> <br><br>
 <%= f.label :favorite_food %>
-<%= f.text_field :favorite_food %> <br>
+<%= f.text_field :favorite_food %> <br><br>
 <%= f.submit %>
 <% end %>

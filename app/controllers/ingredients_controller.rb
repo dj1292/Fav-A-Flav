@@ -1,5 +1,5 @@
 class IngredientsController < ApplicationController
-
+    before_action :authorized
     before_action :find_ingredients, only: [:show, :edit, :update, :destroy]
 
     def index

@@ -3,7 +3,7 @@ class CreatePlates < ActiveRecord::Migration[6.0]
     create_table :plates do |t|
       t.string :name 
       t.string :category
-      # t.integer :food_id
+      t.integer :food_id
       t.integer :user_id
       # t.integer :restaurant_id, :default => nil
 

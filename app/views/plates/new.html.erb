@@ -1,9 +1,12 @@
+<h1>Prep a new plate here!</h1> <br>
+
+
 <%= form_for @plate, method: :post do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %> <br>
-<%= f.label :category %>
-<%= f.text_field :category %> <br>
-<%= f.label :username %>
-<%= f.collection_select(:user_id, User.all, :id, :username) %>
+<b><%= f.label :name %></b>
+<b><%= f.text_field :name %> <br></b>
+<b><%= f.label :category %></b>
+<b><%= f.text_field :category %> <br></b>
+<b><%= f.label :username %></b>
+<%= f.collection_select(:user_id, User.all, :id, :username) %> <br>
 <%= f.submit %>
 <% end %>
