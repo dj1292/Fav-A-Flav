@@ -1,0 +1,7 @@
+<%= form_for @ingredient, method: :patch do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %> <br>
+<%= f.label :specifics %>
+<b>Optional:</b><%= f.text_field :specifics %> <br>
+<%= f.submit %>
+<% end %>

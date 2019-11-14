@@ -10,7 +10,6 @@ def new
 end
 
 def create
-    byebug
     @plate = Plate.create(plate_params)
     if @plate
     redirect_to plate_path(@plate.id)
@@ -36,11 +35,11 @@ end
 private
 
 def find_plate
-@plate = Plate.find_by(:id => params[:id])
+    @plate = Plate.find_by(:id => params[:id])
 end
 
 def plate_params 
- params.require(:plate).permit(:name, :category, :user_id)
+    params.require(:plate).permit(:name, :category, :user_id)
 end
     
 end

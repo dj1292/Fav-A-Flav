@@ -1,9 +1,9 @@
-<h1> Current list of plates</h1>
+<h1> Current list of Plates</h1>
 <ul>
 <% @plates.each do |plate| %>
-<h2>Name: <%= link_to plate.name, plate_path(plate) %></h2>
-<h3>Category: <li><%= plate.category %></li></h3>
-<%= link_to "Edit", edit_path(plate) %>
+<h2>Name:</h2><b> <%= link_to plate.name, plate_path(plate) %></b>
+<h3>Category:</h3> <b><%= plate.category %></b> <br><br>
+<%= link_to "Edit", edit_plate_path(plate) %>
 <%= button_to "Delete", plate, :method => :delete, data: {confirm: "Are you sure?"} %>
 <% end %>
 </ul>

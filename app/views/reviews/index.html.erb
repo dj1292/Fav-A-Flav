@@ -1,0 +1,9 @@
+<h1>Current list of Reviews</h1>
+<ul>
+<% @reviews.each do |review| %>
+<h2>Title:</h2> <b><%= link_to review.title, review_path(review) %></b>
+<h3>Content:</h3> <b> <%= review.content %> </b> <br><br>
+<%= link_to "Edit", edit_review_path(review) %> 
+<%= button_to "Delete", review, :method => :delete, data: {confirm: "Are you sure??"} %>
+<% end %>
+</ul>

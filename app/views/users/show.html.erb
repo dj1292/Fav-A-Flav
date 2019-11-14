@@ -1,4 +1,8 @@
-<h1><%= @user.username %></h1>
+<h1><%= @user.name %></h1>
+
+<p>
+    <h2>Username:</h2> <b><%= @user.username %></b>
+</p>
 
 <p>
     <h2>Location:</h2> <b><%= @user.location %></b>
@@ -7,3 +11,5 @@
 <p>
     <h2>Favorite Food:</h2> <b><%= @user.favorite_food %></b>
 </p>
+
+<%= link_to "Back to Users", users_path %>

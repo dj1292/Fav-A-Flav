@@ -1,0 +1,8 @@
+<h2>Edit food here!</h2>
+
+<%= form_for @food, method: :post do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %> <br>
+<%# <%= f.collection_select(:plate_id, Plate.all, :id, :name) %> %>
+<%= f.submit %>
+<% end %>

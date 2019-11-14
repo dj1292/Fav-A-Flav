@@ -14,8 +14,6 @@ ActiveRecord::Schema.define(version: 2019_11_12_204725) do
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
-    t.integer "plate_id"
-    t.integer "ingredient_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -37,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_11_12_204725) do
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -45,12 +44,12 @@ ActiveRecord::Schema.define(version: 2019_11_12_204725) do
     t.string "title"
     t.text "content"
     t.integer "user_id"
-    t.integer "plate_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name"
     t.string "username"
     t.string "location"
     t.string "favorite_food"
