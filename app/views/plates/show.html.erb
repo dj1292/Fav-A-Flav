@@ -1,6 +1,8 @@
 <h1> <%= @plate.name %> </h1>
 
 <b><%= link_to "Edit", edit_plate_path(@plate) %> </b><br>
+<b><%= link_to "Add Food to this Plate", new_food_path %> </b><br>
+<b><%= link_to "Write a Review", new_review_path %> </b><br>
 
 <p>
     <h2>Food on Plate:</h2>
@@ -12,7 +14,7 @@
 
     <% @plate.foods.map do |food| %>
     <% food.ingredients.each do |ingredient|%>
-    <li><b><%= link_to ingredient.name, ingredient_path %></b></li>
+    <li><b><%= link_to ingredient.name, ingredient_path(ingredient) %></b></li>
     <% end %>
     <% end %>
 </p>
@@ -34,7 +36,5 @@
 </p>
 
 
-<b><%= link_to "Add Food to this Plate", new_food_path %> </b><br>
-<b><%= link_to "Write a Review", new_review_path %> </b><br><br>
 <b><%= link_to "View Plate Page", plates_path %> </b><br>
 <b><%= link_to "Back to User Page", user_path %> </b>

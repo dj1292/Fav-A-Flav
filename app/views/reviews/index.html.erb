@@ -4,6 +4,8 @@
 <h2>Title:</h2> <b><%= link_to review.title, review_path(review) %></b>
 <h3>Content:</h3> <b> <%= review.content %> </b> <br><br>
 <%= link_to "Edit", edit_review_path(review) %> 
-<%= button_to "Delete", review, :method => :delete, data: {confirm: "Are you sure??"} %>
+<%= button_to "Delete", review, :method => :delete, data: {confirm: "Are you sure??"} %><br>
 <% end %>
 </ul>
+
+<b><%= link_to "Back to User", user_path(@user) %></b>

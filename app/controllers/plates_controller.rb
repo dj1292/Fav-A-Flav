@@ -29,7 +29,7 @@ end
 
 def destroy
     @plate.destroy
-    redirect_to plates_path
+    redirect_to user_path(@user)
 end
 
 private
