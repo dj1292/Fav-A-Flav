@@ -1,11 +1,12 @@
 <h1>Current list of Ingredients</h1>
 
 <b><%=link_to "Create", new_ingredient_path%></b>
-<ul>
+
 <% @ingredients.each do |ingredient| %>
 <h2>Name: </h2><%= link_to ingredient.name, ingredient_path(ingredient) %>
 <h2>Specifics:</h2> <b><%= ingredient.specifics %> </b><br><br>
 <%= link_to "Edit", edit_ingredient_path(ingredient) %>
-<%= button_to "Delete", ingredient, :method => :delete, data: {confirm: "No longer need this ingredient?"} %>
+<%= button_to "Delete", ingredient, :method => :delete, data: {confirm: "No longer need this ingredient?"} %><br><br>
 <% end %>
-</ul>
+
+<b><%= link_to "Back to Homepage", user_path(@user) %></b>

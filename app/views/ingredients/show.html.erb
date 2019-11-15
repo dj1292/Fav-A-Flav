@@ -2,4 +2,9 @@
 <p>
 <b>Specifics:</b> <%= @ingredient.specifics %>
 </p>
-<%= link_to "Back to Ingredients", ingredients_path %>
+
+<b><%= link_to "Edit" , edit_ingredient_path(@ingredient) %></b><br><br>
+<b><%= link_to "Add Another?", new_ingredient_path %></b><br>
+<b><%= link_to "Back to Ingredients", ingredients_path %></b><br>
+<b><%= link_to "Back to Food" , food_path %></b><br>
+

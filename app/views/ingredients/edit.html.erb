@@ -1,7 +1,10 @@
 <%= form_for @ingredient, method: :patch do |f| %>
-<%= f.label :name %>
+<b><%= f.label :name %></b>
 <%= f.text_field :name %> <br>
-<%= f.label :specifics %>
-<b>Optional:</b><%= f.text_field :specifics %> <br>
+<b><%= f.label "Food name" %><br></b>
+<%= f.collection_select(:food_id, Food.all, :id, :name) %><br>
+<b>Optional:</b><br>
+<b><%= f.label :specifics %></b>
+<%= f.text_field :specifics %> <br>
 <%= f.submit %>
 <% end %>

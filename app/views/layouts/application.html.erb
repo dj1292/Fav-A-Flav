@@ -7,9 +7,18 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/nuclear/bulmaswatch.min.css">
+
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <section class="section">
+    <div class="content">
+      <%= yield %>
+    </div>
+  </section>
+</body>
 </html>
+
+<b><%= link_to "Logout", logout_path %></b>

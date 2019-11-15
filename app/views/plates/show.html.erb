@@ -1,9 +1,19 @@
 <h1> <%= @plate.name %> </h1>
 
+<b><%= link_to "Edit", edit_plate_path(@plate) %> </b><br>
+
 <p>
     <h2>Food on Plate:</h2>
     <% @plate.foods.map do |food|%>
-    <b><%= link_to food.name, food_path %></b>
+    <b><%= link_to food.name, food_path %></b><br><br>
+    <% end %>
+
+    <h4>Consisting of:</h4> 
+
+    <% @plate.foods.map do |food| %>
+    <% food.ingredients.each do |ingredient|%>
+    <li><b><%= link_to ingredient.name, ingredient_path %></b></li>
+    <% end %>
     <% end %>
 </p>
 
@@ -16,9 +26,15 @@
     <%= @plate.user.username %>
 </p>
 
+<p>
+    <h2>Review:</h2>
+    <b><% @plate.reviews.each do |review| %></b>
+    <b><%= link_to review.title, review_path %></b><br><br>
+    <% end %>
+</p>
 
-<%= link_to "Edit", edit_plate_path(@plate) %> <br><br>
-<%= link_to "Add Food to this Plate", new_food_path %> <br>
-<%= link_to "Write a Review", new_review_path %><br><br>
-<%= link_to "View Plate Page", plates_path %><br>
-<%= link_to "Back to User Page", user_path %>
+
+<b><%= link_to "Add Food to this Plate", new_food_path %> </b><br>
+<b><%= link_to "Write a Review", new_review_path %> </b><br><br>
+<b><%= link_to "View Plate Page", plates_path %> </b><br>
+<b><%= link_to "Back to User Page", user_path %> </b>

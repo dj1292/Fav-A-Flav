@@ -38,6 +38,6 @@ class IngredientsController < ApplicationController
     end
 
     def ingredient_params 
-    strong_params = params.require(:ingredient).permit(:name, :specifics)
+    strong_params = params.require(:ingredient).permit(:name, :specifics, :food_id)
     end
 end

@@ -1,5 +1,8 @@
 <h1><%= @user.name %></h1>
 
+<b><%= link_to "Create a Plate", new_plate_path %></b><br>
+<b><%= link_to "Edit Homepage", edit_user_path %> </b>
+
 <p>
     <h2>Username:</h2> <b><%= @user.username %></b>
 </p>
@@ -13,13 +16,18 @@
 </p>
 
 <p>
-    <b>Your plates:</b> 
-    <ul>
+    <h2>Your Plates:</h2> 
     <% @user.plates.map do |plate|%>
-    <li><%= link_to plate.name, plate_path(plate) %></li>
-    </ul>
+    <li><b><%= link_to plate.name, plate_path(plate) %></b></li>
+    <%= button_to "Delete", plate, :method => :delete, data: {confirm: "No longer need this plate?"} %><br>
     <% end %>
 </p>
 
-<%# <%= link_to "View users page", users_path %> 
-<%= link_to "Create a Plate", new_plate_path %>
+<p>
+    <h2>Your Reviews:</h2> 
+    
+    <% @user.reviews.each do |review|%>
+    <li><b><%= link_to review.title, review_path(review) %></b></li>
+    <%= button_to "Delete", review, :method => :delete, data: {confirm: "No longer need this review?"} %><br>
+    <% end %>
+</p>
